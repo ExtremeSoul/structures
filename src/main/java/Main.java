@@ -71,15 +71,15 @@ public class Main {
         stack.push(random.nextInt(100) / 10.0);
         stack.push(random.nextInt(100) / 10.0);
         System.out.print("\n" + stack.toString() + "\n");
-        System.out.println('\n' + stack.pop() + '\n');
+        System.out.println('\n' + stack.pop().toString() + '\n');
         System.out.println('\n' + stack.toString() + '\n');
-        System.out.println('\n' + stack.pop() + '\n');
+        System.out.println('\n' + stack.pop().toString() + '\n');
         System.out.println('\n' + stack.toString() + '\n');
-        System.out.println('\n' + stack.pop() + '\n');
+        System.out.println('\n' + stack.pop().toString() + '\n');
         System.out.println('\n' + stack.toString() + '\n');
-        System.out.println('\n' + stack.pop() + '\n');
+        System.out.println('\n' + stack.pop().toString() + '\n');
         System.out.println('\n' + stack.toString() + '\n');
-        System.out.println('\n' + stack.pop() + '\n');
+        System.out.println('\n' + stack.pop().toString() + '\n');
         System.out.println('\n' + stack.toString() + '\n');
         //System.out.println('\n' + stack.pop() + '\n');
     }
