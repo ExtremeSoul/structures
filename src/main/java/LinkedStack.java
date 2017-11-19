@@ -1,10 +1,10 @@
 import java.util.EmptyStackException;
 
-public class LinkedStack implements Stack {
+public class LinkedStack implements Stack<Double> {
     private Node top;
 
     @Override
-    public void push(double a) {
+    public void push(Double a) {
         Node newNode = new Node(a);
 
         newNode.under = top;
@@ -12,7 +12,7 @@ public class LinkedStack implements Stack {
     }
 
     @Override
-    public double pop() {
+    public Double pop() {
         if(top == null) {
             throw new EmptyStackException();
         }
@@ -50,6 +50,9 @@ public class LinkedStack implements Stack {
 
         return result.toString();
     }
+
+
+
 }
 
 
