@@ -1,34 +1,39 @@
 import java.util.EmptyStackException;
 
-public class LinkedStack implements Stack<Double> {
-    private Node top;
+public class LinkedStack<Type> implements Stack<Type> {
+    private Node<Type> top;
 
     @Override
-    public void push(Double a) {
-        Node newNode = new Node(a);
+    public void push(Type a) {
+        Node<Type> newNode = new Node<>(a);
 
         newNode.under = top;
         top = newNode;
     }
 
     @Override
-    public Double pop() {
+    public Type pop() {
         if(top == null) {
             throw new EmptyStackException();
         }
 
-        double value = top.value;
+        Type value = top.value;
 
         top = top.under;
 
         return value;
     }
 
-    private static class Node {
-        private double value;
-        private Node under;
+    @Override
+    public boolean isEmpty() {
+        return top == null;
+    }
 
-        private Node(double value) {
+    private static class Node<Type> {
+        private Type value;
+        private Node<Type> under;
+
+        private Node(Type value) {
             this.value = value;
         }
     }
@@ -50,9 +55,6 @@ public class LinkedStack implements Stack<Double> {
 
         return result.toString();
     }
-
-
-
 }
 
 
