@@ -1,37 +1,26 @@
 import java.util.EmptyStackException;
 
 public class LinkedStack implements Stack {
-    private Node top; // wpisuje ze bedzie obiekt klasy Node
+    private Node top;
+
     @Override
     public void push(double a) {
-
-        Node newNode = new Node(a); //Tworze nowy obiekt klasy Node
+        Node newNode = new Node(a);
 
         newNode.under = top;
         top = newNode;
-
-//        if (top != null) {
-//            newNode.under = top;
-//        }
-//        top = newNode;
-
-
-//        if (top == null) {
-//            top = newNode;
-//        } else {
-//           newNode.under = top;
-//           top = newNode;
-//        }
     }
 
     @Override
     public double pop() {
-        if (top == null) {
+        if(top == null) {
             throw new EmptyStackException();
         }
 
         double value = top.value;
+
         top = top.under;
+
         return value;
     }
 
@@ -46,25 +35,32 @@ public class LinkedStack implements Stack {
 
     @Override
     public String toString() {
-
-        if (top == null) {
+        if(top == null) {
             return "";
         }
 
         StringBuilder result = new StringBuilder();
+
         Node current = top;
-
         do {
-            result.append(current.value + '\n');
-         /*
-         current = current.under;
-        }while (current != null)
-        */
-        }while ((current = current.under) != null);
-
-
+            result.append(current.value + "\n");
+        /*    current = current.under;
+        } while(current != null);*/
+        } while((current = current.under) != null);
 
         return result.toString();
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
